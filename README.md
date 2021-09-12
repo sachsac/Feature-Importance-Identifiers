@@ -31,7 +31,8 @@ The scores are in the array in order of the columns within our features in their
 
 Thanks to our pal, Google, I stumbled upon [this article](https://machinelearningmastery.com/calculate-feature-importance-with-python/) which gave me a way to at least match up the features to their importance scores. In the article, however, they used coefficients to calculate feature importance rather than feature_importances_.
 
-```importance = rf.feature_importances_
+```
+importance = rf.feature_importances_
 # summarize feature importance
 for i,v in enumerate(importance):
 	print('Feature: %0d, Score: %.5f' % (i,v))
@@ -40,7 +41,8 @@ for i,v in enumerate(importance):
 
 Output:
 
-```Feature: 0, Score: 0.00287
+```
+Feature: 0, Score: 0.00287
 Feature: 1, Score: 0.01046
 Feature: 2, Score: 0.25133
 Feature: 3, Score: 0.01361
@@ -63,7 +65,8 @@ Feature: 17, Score: 0.01314
 
 With the above, the article also suggested a way to graph our findings to display our features visually.
 
-```plt.bar([x for x in range(len(importance))], importance);
+```
+plt.bar([x for x in range(len(importance))], importance);
 plt.xlim(-0.5,17.5);
 ```
 Output:
@@ -85,7 +88,8 @@ From this, I needed to count manually 0 to 17 by column to identify the highest 
 While attempting to help a classmate, I starting playing around with code and was able to find a way to solve my problem by creating a mini-data frame. By doing so, I would achieve what I was looking to do: identify the feature importances readily.
 
 The code:
-```data = {'Feature': X.columns, 'Importance': rf.feature_importances_}
+```
+data = {'Feature': X.columns, 'Importance': rf.feature_importances_}
 feature_importances = pd.DataFrame(data)
 feature_importances
 ```
@@ -95,7 +99,8 @@ Output:
 
 I was happy with just this table, but by creating a visualization as we did before, it becomes immediately apparent which features are the most important. Upon sharing my above code, one of my Bootcamp TAs shared code with me to visualize my findings without the table. As I like having the numerical chart, I adapted her code to fit with my code.
 
-```rf_features = pd.DataFrame({'feature': X_train.columns, 'feature_importance': rf.feature_importances_})
+```
+rf_features = pd.DataFrame({'feature': X_train.columns, 'feature_importance': rf.feature_importances_})
 rf_features.sort_values(by = 'feature_importance', inplace = True)
 
 plt.figure(figsize = (12, 5))
