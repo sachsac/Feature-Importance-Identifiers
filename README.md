@@ -85,7 +85,7 @@ Output:
 From this, I needed to count manually 0 to 17 by column to identify the highest importances: 8 is grade; 2 is sqftliving; 14 is latitude. This dataset's features weren't few but weren't large either. This process would not be efficient in a dataset with more columns.
 
 # After
-While attempting to help a classmate, I starting playing around with code and was able to find a way to solve my problem by creating a mini-data frame. By doing so, I would achieve what I was looking to do: identify the feature importances readily.
+While  discussing with a [classmate](https://github.com/Drodricks0), I starting playing around with code and was able to find a way to solve my problem by creating a mini-data frame. By doing so, I would achieve what I was looking to do: identify the feature importances readily.
 
 The code:
 ```
